@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CubicalCore - MCPE Mobile Demo Port</title>
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      background-color: #282c34;
+      color: white;
+      margin: 0;
+      padding: 0;
+      overflow-x: hidden;
+    }
+    .container {
+      padding: 50px;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 1s ease-out, transform 1s ease-out;
+    }
+    .visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .btn {
+      display: inline-block;
+      margin: 10px;
+      padding: 15px 25px;
+      background-color: #61dafb;
+      color: black;
+      text-decoration: none;
+      border-radius: 5px;
+      font-size: 18px;
+      transition: background-color 0.3s ease;
+    }
+    .btn:hover {
+      background-color: #21a1f1;
+    }
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+    li {
+      font-size: 18px;
+      margin: 10px 0;
+    }
+    i {
+      margin-right: 10px;
+    }
+    iframe {
+      width: 80%;
+      max-width: 800px;
+      height: 450px;
+      border: none;
+      border-radius: 10px;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <!-- Introduction Section -->
+  <div class="container" id="intro">
+    <h1><i class="fas fa-cube"></i> CubicalCore - Revive Your Nostalgia</h1>
+    <p>A port of the MCPE Mobile Demo for Linux, Windows, and more!</p>
+    <p>Currently in beta and not yet released.</p>
+  </div>
+  
+  <!-- Video Section -->
+  <div class="container" id="video">
+    <h2><i class="fas fa-video"></i> Demo Video</h2>
+    <!-- Replace the src URL with your actual video link -->
+    <iframe src="https://youtu.be/fx_KspyAQ7k" allowfullscreen></iframe>
+  </div>
+  
+  <!-- About Section -->
+  <div class="container" id="about">
+    <h2><i class="fas fa-info-circle"></i> What is CubicalCore?</h2>
+    <p>CubicalCore is a recreation and port of the MCPE Mobile Demo, allowing players to experience the classic game feel on modern platforms.</p>
+  </div>
+  
+  <!-- Features Section -->
+  <div class="container" id="features">
+    <h2><i class="fas fa-star"></i> Features</h2>
+    <ul>
+      <li><i class="fas fa-laptop"></i> Supports multiple platforms: Linux, Windows XP to Windows 11</li>
+      <li><i class="fas fa-paint-brush"></i> Comes with 2 texture packs: Blockman GO &amp; Minecraft</li>
+      <li><i class="fas fa-users"></i> Developed by Spargat Team</li>
+    </ul>
+  </div>
+  
+  <!-- Limitations Section -->
+  <div class="container" id="limitations">
+    <h2><i class="fas fa-exclamation-triangle"></i> Limitations</h2>
+    <ul>
+      <li><i class="fas fa-bug"></i> Currently in beta, so expect bugs</li>
+      <li><i class="fas fa-minus-circle"></i> Limited features compared to full Minecraft versions</li>
+      <li><i class="fas fa-tachometer-alt"></i> Some devices may experience performance issues</li>
+    </ul>
+  </div>
+  
+  <!-- Minimum Requirements Section -->
+  <div class="container" id="requirements">
+    <h2><i class="fas fa-check-circle"></i> Minimum Requirements to Play CubicalCore</h2>
+    <ul>
+      <li><i class="fas fa-desktop"></i> <strong>OS:</strong> Windows XP 🗿</li>
+      <li><i class="fas fa-memory"></i> <strong>RAM:</strong> 200 MB</li>
+      <li><i class="fas fa-hdd"></i> <strong>Storage:</strong> 10 MB (SSD or HDD)</li>
+      <li><i class="fas fa-microchip"></i> <strong>Processor:</strong> Any vintage processor that supports Windows XP</li>
+    </ul>
+    <p><em>Extra: Can my super potato get 100 fps on CubicalCore? Why no.</em></p>
+  </div>
+  
+  <!-- Supported Platforms Section -->
+  <div class="container" id="platforms">
+    <h2><i class="fas fa-desktop"></i> Supported Platforms</h2>
+    <ul>
+      <li><i class="fab fa-windows"></i> Windows</li>
+      <li><i class="fab fa-linux"></i> Linux</li>
+      <li><i class="fab fa-apple"></i> MacOS (Coming Soon)</li>
+      <li><i class="fab fa-android"></i> Android (Planned)</li>
+    </ul>
+  </div>
+  
+  <!-- Footer Section -->
+  <div class="container" id="footer">
+    <h2><i class="fas fa-code"></i> Project by Spargat Team</h2>
+    <a href="https://spargatteam.netlify.app" class="btn"><i class="fas fa-globe"></i> Visit Spargat Team</a>
+    <a href="#" class="btn"><i class="fas fa-download"></i> Download (Coming Soon)</a>
+  </div>
+  
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      let sections = document.querySelectorAll(".container");
+      let observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+          }
+        });
+      }, { threshold: 0.5 });
+      
+      sections.forEach(section => {
+        observer.observe(section);
+      });
+    });
+  </script>
+</body>
+</html>
