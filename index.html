@@ -8,7 +8,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
     :root {
-    --primary: #00C853; 
+      --primary: #00C853; 
       --secondary: #64DD17;
       --accent: #A5D6A7; 
       --dark: #1B1F1B;
@@ -240,7 +240,25 @@
         font-size: 2.5rem;
       }
 
-      .section-title {
+.gradient-text {
+  background: linear-gradient(270deg, #ff6a00, #ee0979, #ff6a00);
+  background-size: 600% 600%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradientMove 5s ease infinite;
+}
+
+@keyframes gradientMove {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+
+    .section-title {
         font-size: 2rem;
       }
     }
@@ -263,7 +281,7 @@
   </nav>
 
   <section class="container hero">
-    <h1>Relive the MCPE Mobile Demo Experience</h1>
+    <h1 class="gradient-text">Relive the MCPE Mobile Demo Experience</h1>
     <p class="subtitle">Classic Minecraft Pocket Edition nostalgia, reimagined for modern platforms.</p>
     <div class="cta-buttons">
       <a href="#download" class="btn"><i class="fas fa-download"></i> Download Beta</a>
